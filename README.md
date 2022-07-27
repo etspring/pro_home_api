@@ -51,7 +51,7 @@
   params = { "FName": "Петр",
              "MName": "Иванович",
              "LName": "ПроХомов",
-             "Code":  "1234"
+             "Code":  "1234",
              "Phone": "79031234567" }
   client.codeconfirm(data: params)
 ```
