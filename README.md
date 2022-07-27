@@ -60,6 +60,27 @@
 ```ruby
 {"success"=>true, "message"=>"OK", "details"=>nil, "data"=>{"ClientID"=>"xxxx-xxxx-xxxx-xxxx-xxxx", "Token"=>{"AccessToken"=>"xxxxxxx", "RefreshToken"=>"xxxxxxxx", "ExpiresIn"=>3600, "TokenType"=>"Bearer"}}}
 ```
+### counter
+Возвращает текущее значение счетчиков за текущий отчетный период,
+
+Параметры:
+```ruby
+  params = {"ClientID": "ClientID, полученный в ответе метода codeconfirm",
+            "PersonalAccountNumber": "см dependencies['Dependencies']['PersonalAccount']['Number']" }
+  client.counters(data: params)
+```
+
+### counters_history
+Возвращает значения счетчиков помесячно за выбранный период. Обратите внимание на формат даты + ОБЯЗАТЕЛЬНОЕ наличие времени.
+
+Параметры:
+```ruby
+  params = {"ClientID": "ClientID, полученный в ответе метода codeconfirm",
+            "PersonalAccountNumber": "см dependencies['Dependencies']['PersonalAccount']['Number']",
+            "StartDate": '01.01.2010 00:00:00',
+            "EndDate": '01.01.2022 00:00:00'}
+  client.counters_history(data: params)
+```
 
 ### dependencies
 Метод возвращает набор данных, необходимых при дальнейшей работе с API.

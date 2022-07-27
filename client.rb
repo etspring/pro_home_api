@@ -5,9 +5,9 @@ module ProHome
     class Client
       attr_reader :bearer, :headers
 
-      %w[codeconfirm dependencies registration].each do |method_name|
+      %w[codeconfirm counter counters_history dependencies polls registration].each do |method_name|
         define_method(method_name) do |data: {}|
-          post(endpoint: __method__, payload: data)
+          post(endpoint: __method__.to_s.split('_').join('/'), payload: data)
         end
       end
 
