@@ -1,9 +1,9 @@
 # ProHome Api Client
 
-Простенький клиент для API УК ProHome ( https://prohome.ru/ )
-Оборачивать в gem 30 строчек кода лень, хотя может быть и запилю.
+Простенький клиент для API УК ProHome ( https://prohome.ru/ ).Оборачивать в gem 30 строчек кода лень, хотя может быть и запилю.
 
 Официально ProHome не дает доступа к своему API.
+
 Используйте на свой страх и риск.
 
 ## Installation
@@ -29,10 +29,11 @@
 
 Параметры:
 ```ruby
-  { "FName": "Петр",
-    "MName": "Иванович",
-    "LName": "ПроХомов",
-    "Phone": "79031234567" }
+  params = { "FName": "Петр",
+             "MName": "Иванович",
+             "LName": "ПроХомов",
+             "Phone": "79031234567" }
+  client.registration(data: params)
 ```
 В случае success на телефон в виде SMS будет выслан код подтверждения.
 
@@ -47,11 +48,12 @@
 
 Параметры:
 ```ruby
-  { "FName": "Петр",
-    "MName": "Иванович",
-    "LName": "ПроХомов",
-    "Code":  "1234"
-    "Phone": "79031234567" }
+  params = { "FName": "Петр",
+             "MName": "Иванович",
+             "LName": "ПроХомов",
+             "Code":  "1234"
+             "Phone": "79031234567" }
+  client.codeconfirm(data: params)
 ```
 
 Ответ:
@@ -64,7 +66,8 @@
 
 Параметры:
 ```ruby
-{"ClientID": "ClientID, полученный в ответе метода codeconfirm"
+  params = {"ClientID": "ClientID, полученный в ответе метода codeconfirm"
+  client.dependencies(data: params)
 ```
 
 Ответ:
