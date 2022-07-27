@@ -1,5 +1,4 @@
-# pro_home_api
-ProHome Api Client
+# ProHome Api Client
 
 Простенький клиент для API УК ProHome ( https://prohome.ru/ )
 Оборачивать в gem 30 строчек кода лень, хотя может быть и запилю.
@@ -15,7 +14,6 @@ ProHome Api Client
 ## Usage
 Подавляющее большинство методов API используют POST-запросы для получения параметров.
 Для авторизации используется Bearer.
-
 
 ### Как получить Bearer?
 Поочередно дернуть методы registration и codeconfirm ( передаваемые параметры описаны ниже).
